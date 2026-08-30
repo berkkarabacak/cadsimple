@@ -164,6 +164,40 @@ export default function Landing() {
         </div>
       </section>
 
+      {/* formats */}
+      <section className="border-t border-white/5 py-24">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 lg:grid-cols-2 lg:items-center">
+          <div>
+            <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
+              A free online viewer for every 3D format you actually have.
+            </h2>
+            <p className="mt-4 max-w-md leading-relaxed text-slate-400">
+              CADsimple works as an <strong className="text-slate-200">online STL viewer</strong>,{' '}
+              <strong className="text-slate-200">OBJ viewer</strong> and{' '}
+              <strong className="text-slate-200">GLB / glTF viewer</strong> — and it can preview{' '}
+              <strong className="text-slate-200">OpenSCAD</strong> files with live parametric controls.
+              Drop a whole ZIP archive and every model inside is unpacked and laid out for you.
+              STEP and IGES support is on the open roadmap.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            {[
+              { ext: '.STL', note: '3D prints & scans' },
+              { ext: '.OBJ', note: 'classic mesh exchange' },
+              { ext: '.GLB', note: 'web & AR models' },
+              { ext: '.GLTF', note: 'web & AR models' },
+              { ext: '.SCAD', note: 'parametric, live sliders' },
+              { ext: '.ZIP', note: 'auto-unpacked archives' },
+            ].map((f) => (
+              <div key={f.ext} className="glass rounded-2xl p-5 transition-colors hover:ring-1 hover:ring-cyan-400/30">
+                <div className="font-display text-lg font-bold text-cyan-300">{f.ext}</div>
+                <div className="mt-1 text-xs text-slate-500">{f.note}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* principles */}
       <section className="border-t border-white/5 py-24">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 lg:grid-cols-2 lg:items-center">
